@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [text, setText] = useState("");
+
+  const handleChange = (event) => {
+    setText(event.target.value);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <div>
+      <h1 class="title">Character counter</h1>
+      <main className="main">
+        <input
+          className="textInput"
+          placeholder="Enter a word"
+          value={text}
+          onChange={handleChange}
+        />
+        <p className="word">
+          <b>Word:</b> {text}
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        <p>Number of characters: {text.length}</p>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
