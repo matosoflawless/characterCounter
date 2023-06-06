@@ -5,6 +5,7 @@
 }
 
 body {
+    background-color: #098ad4;
   font-family: sans-serif;
   margin: 0;
 }
@@ -37,7 +38,7 @@ button:hover {
 .main {
   padding: 15px;
 }
-
+.successMessage,
 .warningMessage,
 .errorMessage {
   padding: 15px;
@@ -50,4 +51,7 @@ button:hover {
 
 .warningMessage {
   background: yellow;
+}
+.successMessage {
+    background: green;
 }
